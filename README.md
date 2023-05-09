@@ -18,3 +18,14 @@ The variable-length codes assigned to input characters are Prefix Codes, means t
 <li>Encode the input text. Added padding to the encoded text, if it’s not of a length of multiple of 8. Stored this padding information, in 8 bits, in the beginning of the resultant code.
 
 <li>Write the result to an output binary file, which will be our compressed file.
+</ul>
+  
+After running on a several sample text files, Compression Ratio on an average was achieved to be 2.1:1
+
+### Process of Decompression
+<ul>
+  <li> Reads the binary file
+  <li> Removes any padding present in the file
+  <li> Reads the bits untill it natches to the huffman code of any character
+  <li> Changes the sequence into the character
+  <li> This is repeated untill whole file is read
